@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Models\User;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -44,5 +46,21 @@ class UserService
     public function user() : User
     {
         return Auth::user();
+    }
+
+    public function register($data) : User
+    {
+        try{
+            $this->user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'email_verified_at' => Carbon::now()
+            ]);
+        }catch(Exception $e){
+            throw $e;
+        }
+
+        return $this->user;
     }
 }
