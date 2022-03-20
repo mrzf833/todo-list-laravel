@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\EmailController;
 use App\Http\Controllers\Api\TodoListController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,5 +29,7 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
         Route::get('/', [TodoListController::class, 'index'])->name('index');
         Route::post('/', [TodoListController::class, 'store'])->name('store');
     });
+
+    Route::post('/email/send', [EmailController::class, 'send'])->name('email.send');
 });
 Route::post('/login', [AuthController::class, 'login']);
