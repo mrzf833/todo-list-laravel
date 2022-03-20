@@ -10,17 +10,24 @@ class TodoService
 {
     protected Todo $todo;
 
-    public function create(array $data): Todo
+    public function create(array $data): array
     {
         try{
             $this->todo = Todo::create([
                 'name' => $data['name'],
                 'data' => $data['data'],
             ]);
-
-            return $this->todo;
         }catch(Exception $e){
             throw $e;
         }
+        $message = 'data created successfully';
+
+        // event(new MessageProcessed($data, $message));
+        (new TodoNotificationService)->send($this->todo);
+
+        return [
+            'todo' => $this->todo,
+            'message' => $message
+        ];
     }
 }

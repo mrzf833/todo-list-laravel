@@ -4,15 +4,22 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Todo;
 use App\Services\TodoService;
-use App\Events\MessageProcessed;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTodoRequest;
+use App\Notifications\TodoCreatedNotification;
+use Illuminate\Support\Facades\Auth;
 
 class TodoListController extends Controller
 {
     public function index()
     {
         $todos = Todo::all();
+        $notification = Auth::user()->notifications()
+            ->where('type', TodoCreatedNotification::class)
+            ->whereNull('read_at')->get();
+
+        $notification->markAsRead();
+
         return response()->json([
             'data' => $todos
         ]);
@@ -21,12 +28,10 @@ class TodoListController extends Controller
     public function store(StoreTodoRequest $request, TodoService $todoService)
     {
         $data = $todoService->create($request->all());
-        $message = 'data created successfully';
 
-        event(new MessageProcessed($data, $message));
         return response()->json([
-            'message' => $message,
-            'data' => $data
+            'message' => $data['message'],
+            'data' => $data['todo']
         ]);
     }
 }
