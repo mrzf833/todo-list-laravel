@@ -31,5 +31,6 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     });
 
     Route::post('/email/send', [EmailController::class, 'send'])->name('email.send');
+    Route::post('/email/send/queue', [EmailController::class, 'sendWithQueue'])->name('email.send_queue');
 });
 Route::post('/login', [AuthController::class, 'login']);

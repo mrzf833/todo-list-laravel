@@ -17,4 +17,13 @@ class EmailController extends Controller
             'message' => $message
         ]);
     }
+
+    public function sendWithQueue(SendMailRequest $request, EmailService $emailService)
+    {
+        $message  = $emailService->sendMailWithQueue($request->email_to, $request->message);
+
+        return response()->json([
+            'message' => $message
+        ]);
+    }
 }
