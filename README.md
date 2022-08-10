@@ -22,7 +22,6 @@
 ### Belum Diterapkan
 - Caching
 - Text Search
-- Unit Test
 - CI/CD
 - Monitoring
 
@@ -51,3 +50,4 @@
 - Deployment
 - Architecture
 - Task Scheduling
+- Unit Test
