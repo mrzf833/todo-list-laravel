@@ -13,6 +13,8 @@
 - `php artisan key:generate`
 - `php artisan storage:link`
 - `php artisan migrate:fresh --seed`
+- `jika ingin menjalankan task scheduling lakukan`
+    - `php artisan schedule:work`
 
 
 ## Roadmap yang telah di terapkan.
