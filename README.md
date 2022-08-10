@@ -14,7 +14,11 @@
 
 
 ## Roadmap yang telah di terapkan.
+- <a href="https://github.com/Hasnayeen/laravel-developer-roadmap">url roadmap laravel</a>
 ### Belum Diterapkan
 - Routing
+- Controller
+- View -> Blade
+- Model -> Eloquent & Database
 
 ### Sudah Diterapkan
