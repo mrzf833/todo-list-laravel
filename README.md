@@ -20,5 +20,30 @@
 - Controller
 - View -> Blade
 - Model -> Eloquent & Database
+- Error Handling -> try catch
+- Request
+- Response
+- Authentication
+- Middleware
+- Validation
+- Events
+- Mail
+- Notification
+- Queue
+- Broadcasting
+- Authorization
+- Service Container
+- Service Provider
+- Facade -> Helpers
+- Package
+- Security
+- Deployment
+- Architecture
 
 ### Sudah Diterapkan
+- Task Scheduling
+- Caching
+- Text Search
+- Unit Test
+- CI/CD
+- Monitoring
