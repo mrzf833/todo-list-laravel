@@ -16,7 +16,7 @@
 
 
 ## Roadmap yang telah di terapkan.
-- <a target="_blank" href="https://github.com/Hasnayeen/laravel-developer-roadmap">url roadmap laravel</a>
+- <a href="https://github.com/Hasnayeen/laravel-developer-roadmap">url roadmap laravel</a>
 ### Belum Diterapkan
 - Task Scheduling
 - Caching
