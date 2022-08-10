@@ -15,7 +15,8 @@
 - `php artisan migrate:fresh --seed`
 - `jika ingin menjalankan task scheduling lakukan`
     - `php artisan schedule:work`
-
+- `jika ingin menjalankan queue lakukan`
+    - `php artisan queue:work --queue=high,default`
 
 ## Roadmap yang telah di terapkan.
 - <a href="https://github.com/Hasnayeen/laravel-developer-roadmap">url roadmap laravel</a>
