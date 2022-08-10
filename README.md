@@ -8,6 +8,8 @@
 - `composer install`
 - `cp .env.example .env`
 - `setting .envnya`
+    - `dbnya disesuaikan`
+    - `config smptp email di sesuaikan`
 - `php artisan key:generate`
 - `php artisan storage:link`
 - `php artisan migrate:fresh --seed`
