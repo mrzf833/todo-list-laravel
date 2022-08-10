@@ -16,6 +16,14 @@
 ## Roadmap yang telah di terapkan.
 - <a href="https://github.com/Hasnayeen/laravel-developer-roadmap">url roadmap laravel</a>
 ### Belum Diterapkan
+- Task Scheduling
+- Caching
+- Text Search
+- Unit Test
+- CI/CD
+- Monitoring
+
+### Sudah Diterapkan
 - Routing
 - Controller
 - View -> Blade
@@ -39,11 +47,3 @@
 - Security
 - Deployment
 - Architecture
-
-### Sudah Diterapkan
-- Task Scheduling
-- Caching
-- Text Search
-- Unit Test
-- CI/CD
-- Monitoring
