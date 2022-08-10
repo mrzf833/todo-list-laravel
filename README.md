@@ -15,5 +15,6 @@
 
 ## Roadmap yang telah di terapkan.
 ### Belum Diterapkan
+- Routing
 
 ### Sudah Diterapkan
