@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
     Route::group(['prefix' => 'todo', 'middleware' => 'auth:sanctum', 'as' => 'todo.'], function(){
         Route::get('/', [TodoListController::class, 'index'])->name('index');
+        Route::get('/cache', [TodoListController::class, 'indexCachce'])->name('indexCachce');
         Route::post('/', [TodoListController::class, 'store'])->name('store');
     });
 

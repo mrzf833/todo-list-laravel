@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTodoRequest;
 use App\Notifications\TodoCreatedNotification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class TodoListController extends Controller
 {
@@ -19,6 +20,20 @@ class TodoListController extends Controller
             ->whereNull('read_at')->get();
 
         $notification->markAsRead();
+
+        return response()->json([
+            'data' => $todos
+        ]);
+    }
+
+    public function indexCachce()
+    {
+
+        $todos = Cache::remember("todos", now()->addMinutes(60), function(){
+            $todos = Todo::all();
+
+            return $todos;
+        });
 
         return response()->json([
             'data' => $todos
